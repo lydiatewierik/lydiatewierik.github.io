@@ -1,0 +1,263 @@
+@font-face {
+    font-family: "Handwriting Nice";
+    src: url("assets/fonts/HandwritingNice.otf");
+}
+
+.knewave-regular {
+  font-family: "Knewave", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+    --neutral-color: #F9F0D0;
+    --primary-color: #775F4B;
+    --secondary-color: #5E774B;
+    --accent-color: #E8972C;
+    --text-color: #261202;
+    --text-secondary-color: #716E6B;
+    --selection-bg-col: #5E774B;
+    --selection-tex-col: #fff;
+}
+
+::selection {
+    background-color: var(--selection-bg-col);
+    color: var(--selection-tex-col);
+}
+
+::-moz-selection {
+    background-color: var(--selection-bg-col);
+    color: var(--selection-tex-col);
+}
+
+h1 {
+    height: 50%;
+
+    font-family: "Knewave", sans-serif;
+    /*font-size: 30pt;*/
+    color: var(--primary-color);
+    /*color: var(--accent-color);*/
+
+    display: flex;
+    justify-content: center;
+    margin: 0;
+
+    padding: 0;
+    padding-top: 10px;
+}
+
+h2,h3,h4,h5,h6,p,a {
+    font-family: "Handwriting Nice", sans-serif;
+    color: var(--text-color);
+}
+
+h2 {
+    color: var(--secondary-color);
+    font-size: 22pt;
+}
+
+h4 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+p {
+    font-family: "Sunflower", 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/*h2::before {
+    position: absolute;
+    content: "ifje";
+    color: #0000;
+    border-bottom: 3px solid var(--accent-color);
+}*/
+
+a {
+    font-size: 14pt;
+    font-weight: bold;
+    user-select: none;
+    text-decoration: none;
+    transition: 200ms;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.pair {
+    display: grid;
+    grid-template-columns:  1.778fr 1fr;
+}
+
+/*.punch {
+    font-size: 20pt;
+    color: var(--secondary-color);
+}*/
+
+.align-right {
+    /*padding-top: 20px;*/
+    /*width: 95%;*/
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pfp {
+    width: 150px;
+    height: 150px;
+
+    border-radius: 100%;
+    border: 3px solid var(--primary-color);
+}
+
+body {
+    margin: 0;
+    height: 100dvh;
+}
+
+header {
+    background-color: var(--neutral-color);
+    height: 15dvh;
+    min-height: 120px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /*padding: 3dvh;*/
+    /*box-sizing: border-box;*/
+
+    border-bottom: 1px solid #0001;
+}
+
+.centre-section {
+    height: fit-content;
+    display: grid;
+    grid-template-rows: 3fr 2fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.centre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    background-color: var(--neutral-color);
+    height: fit-content;
+    min-height: 100dvh;
+
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    background-color: var(--neutral-color);
+    color: var(--text-secondary-color);
+    font-size: 10pt;
+    height: 10dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-top: 1px solid #0001;
+}
+
+content {
+    min-width: 600px;
+    width: 50dvw;
+    height: fit-content;
+
+    /*box-shadow: 0 0 20px rgba(0,0,0,0.2);*/
+    /*background-color: rgba(0,0,0,0.1);*/
+    background-color: var(--neutral-color);
+
+    padding: 20px;
+}
+
+.tray {
+    width: 100%;
+    /*height: 60px;*/
+    gap: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tray-item {
+    color: var(--secondary-color);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.778fr 1fr;
+    gap: 5px;
+    row-gap: 5px;
+}
+
+.panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.panel img {
+    width: 100%;
+    max-height: 100%;
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+
+.panel .description {
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.panel:hover .description {
+    opacity: 1;
+}
+
+.description {
+    width: 100%;
+    height: 100%;
+    grid-row-start: 1;
+    grid-column-start: 1;
+
+    background: linear-gradient(to bottom,  #0000 0%, #0000 70%, #000d 100%);
+    color: var(--neutral-color);
+    font-family: "Sunflower", 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#display {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    opacity: 0;
+    transition: 0.3s;
+    visibility: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#display img {
+    position: absolute;
+    /*height: 90%;*/
+    max-width: 90%;
+    max-height: 90%;
+}
